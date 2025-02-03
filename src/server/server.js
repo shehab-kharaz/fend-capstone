@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const getLocationData = require('./geonamesAPI').default;
 const getWeatherData = require('./weatherbitAPI').default;
+const getImage = require('./pixabayAPI').default;
 
 
 dotenv.config(); 
@@ -42,6 +43,22 @@ app.get('/weather', async (req, res) => {
     }
 
     res.json(weatherData);
+});
+
+
+app.get('/image', async (req, res) => {
+    const { city } = req.query;
+    if (!city) {
+        return res.status(400).json({ error: "City is required" });
+    }
+
+    const imageUrl = await getImage(city);
+
+    if (!imageUrl) {
+        return res.status(500).json({ error: "Failed to fetch image" });
+    }
+
+    res.json({ imageUrl });
 });
 
 
