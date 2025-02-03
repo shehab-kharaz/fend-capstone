@@ -1,9 +1,32 @@
-<HTML>
-  <head>
-    <title>sda</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel App</title>
+</head>
+<body>
+    <header>
+        <h1>Travel Planner</h1>
+    </header>
+    
+    <main>
+        <form id="travel-form">
+            <label for="destination">Enter Destination:</label>
+            <input type="text" id="destination" required>
 
-  </head>
-  <body>
-    This is body
-  </body>
-</HTML>
+            <label for="departure-date">Enter Departure Date:</label>
+            <input type="date" id="departure-date" required>
+
+            <button type="submit">Search</button>
+        </form>
+
+        <section id="results">
+            <h2>Trip Details</h2>
+            <p id="weather-info"></p>
+            <img id="location-image" src="" alt="Destination Image" style="display: none;">
+        </section>
+    </main>
+
+</body>
+</html>
