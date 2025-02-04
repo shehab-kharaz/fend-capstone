@@ -1,13 +1,4 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-form {
-  margin-top: 20px;
-}
-
-input, button {
-  margin: 5px;
-  padding: 8px;
-}
+@use "./base";
+@use "./form";
+@use "./trips";
+@use "./buttons";

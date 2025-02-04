@@ -1,0 +1,58 @@
+@use "variables" as v;
+
+body {
+    font-family: Arial, sans-serif;
+    background: v.$background-color;
+    text-align: center;
+    padding: 5vh;
+    color: v.$text-color;
+}
+
+header h1 {
+    color: v.$text-color;
+    font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 3vh;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    #saved-trips {
+        max-width: 90%;
+    }
+
+    .trip-entry {
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .trip-entry {
+        padding: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    img {
+        width: 70%;
+    }
+
+    button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
