@@ -1,6 +1,7 @@
 import { updateUI } from "./updateUI";
+import { validateInput } from "./validateInput";
 
-const BACKEND_URL = "http://localhost:8081";
+const BACKEND_URL = "http://localhost:8081"; 
 
 export async function handleFormSubmission(event) {
     event.preventDefault();
@@ -8,8 +9,7 @@ export async function handleFormSubmission(event) {
     const destination = document.getElementById("destination").value;
     const departureDate = document.getElementById("departure-date").value;
 
-    if (!destination || !departureDate) {
-      alert("Please enter both destination and departure date.");
+    if (!validateInput(destination, departureDate)) {
         return;
     }
 
