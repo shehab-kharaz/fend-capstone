@@ -1,0 +1,31 @@
+@use "variables" as v;
+
+#saved-trips {
+    margin-top: 2rem;
+    text-align: center;
+    max-width: 80%;
+    margin: auto;
+}
+
+.trip-entry {
+    background: white;
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+    border-radius: v.$border-radius;
+    box-shadow: v.$box-shadow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 40rem;
+    margin: 1rem auto;
+
+    img {
+        display: block;
+        width: 80%;
+        max-width: 40rem;
+        height: auto;
+        border-radius: v.$border-radius;
+        margin-top: 0.5rem;
+    }
+}

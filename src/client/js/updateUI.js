@@ -33,9 +33,11 @@ export function displaySavedTrips() {
             <p><strong>${trip.city}, ${trip.country}</strong> - ${trip.date}</p>
             <p>${trip.weather.description}, ${trip.weather.temperature}°C</p>
             <img src="${trip.imageUrl}" alt="${trip.city}" width="100">
-            <button onclick="removeTrip(${index})">Remove</button>
-            <button onclick="handlePrintTrip(${index})">Print</button>
-            <button onclick="handleExportTrip(${index})">Export to PDF</button>
+            <div>
+                <button onclick="removeTrip(${index})">Remove</button>
+                <button onclick="handlePrintTrip(${index})">Print</button>
+                <button onclick="handleExportTrip(${index})">Export to PDF</button>
+            <div>
         `;
         tripsContainer.appendChild(tripElement);
     });

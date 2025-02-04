@@ -1,0 +1,69 @@
+@use "variables" as v;
+
+form {
+    background: white;
+    padding: 2rem;
+    border-radius: v.$border-radius;
+    box-shadow: v.$box-shadow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30rem;
+    margin: 2rem auto;
+
+    label {
+        font-size: 1.1rem;
+        margin-top: 1rem;
+    }
+
+    input {
+        width: 100%;
+        padding: 0.8rem;
+        margin: 0.5rem 0;
+        border-radius: v.$border-radius;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        transition: border 0.3s ease-in-out;
+
+        &:focus {
+            outline: none;
+            border-color: v.$primary-color;
+            box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+        }
+    }
+
+    button {
+        margin-top: 1rem;
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    input, button {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    input, button {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+}
