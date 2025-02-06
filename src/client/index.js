@@ -6,3 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("travel-form").addEventListener("submit", handleFormSubmission);
     displaySavedTrips();
 });
+
+window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+        .then((registration) => {
+            console.log('Service Worker registered:', registration);
+        })
+        .catch((error) => {
+            console.log('Service Worker registration failed:', error);
+        });
+});
+
