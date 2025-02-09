@@ -82,6 +82,8 @@ Root
 
 ### 1️⃣ Prerequisites
 Ensure you have **Node.js** and **npm** installed:
+
+**Note: This project requires Node.js 18 or later.**
 ```
 node -v  # Check Node.js version
 npm -v   # Check npm version
