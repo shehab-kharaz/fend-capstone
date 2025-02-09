@@ -8,6 +8,9 @@
     "build": "webpack --config webpack.prod.js --mode production",
     "test": "jest"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "jest": {
     "testEnvironment": "jsdom"
   },
