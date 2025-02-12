@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 async function getImage(city) {
     const apiKey = process.env.PIXABAY_API_KEY;
     const baseURL = `https://pixabay.com/api/?key=${apiKey}&q=${encodeURIComponent(city)}&image_type=photo&category=places&per_page=3`;
@@ -19,4 +17,4 @@ async function getImage(city) {
     }
 }
 
-export default getImage;
+module.exports = getImage;

@@ -2,9 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
-const getLocationData = require('./geonamesAPI').default;
-const getWeatherData = require('./weatherbitAPI').default;
-const getImage = require('./pixabayAPI').default;
+const  getLocationData = require('./geonamesAPI');
+const  getWeatherData = require('./weatherbitAPI');
+const  getImage = require('./pixabayAPI');
 
 dotenv.config(); 
 

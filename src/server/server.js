@@ -1,8 +1,11 @@
-const app = require('./app'); 
+const http = require('http');
+const app = require('./app');
 
 const PORT = 8081;
-if (require.main === module) {
-    app.listen(PORT, () => {
-        console.log(`Server runing on ${PORT}`);
-    });
-}
+const server = http.createServer(app);
+
+server.listen(PORT, () => {
+    console.log(`Server runing on ${PORT}`);
+});
+
+module.exports = server;

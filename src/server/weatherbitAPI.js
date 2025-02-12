@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 async function getWeatherData(lat, lon, isFuture) {
     const apiKey = process.env.WEATHERBIT_API_KEY;
     const baseURL = isFuture 
@@ -24,4 +22,4 @@ async function getWeatherData(lat, lon, isFuture) {
     }
 }
 
-export default getWeatherData;
+module.exports = getWeatherData;
