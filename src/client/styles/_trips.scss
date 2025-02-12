@@ -19,6 +19,11 @@
     text-align: center;
     max-width: 40rem;
     margin: 1rem auto;
+    transition: transform 250ms linear;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 
     img {
         display: block;
