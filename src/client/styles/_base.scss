@@ -1,16 +1,29 @@
 @use "variables" as v;
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: v.$background-color;
     text-align: center;
-    padding: 5vh;
     color: v.$text-color;
 }
 
-header h1 {
-    color: v.$text-color;
-    font-size: 2rem;
+header {
+    background: v.$primary-color;
+    position: sticky;
+    top: 0;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 10;
+    
+    h1 {
+        margin: 0;
+    }
 }
 
 @media (max-width: 768px) {
