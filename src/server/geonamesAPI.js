@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 async function getLocationData(city) {
     const username = process.env.GEONAMES_USERNAME;
     const baseURL = `http://api.geonames.org/searchJSON?q=${city}&maxRows=1&username=${username}`;
@@ -24,4 +22,4 @@ async function getLocationData(city) {
     }
 }
 
-export default getLocationData;
+module.exports = getLocationData;
