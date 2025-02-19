@@ -1,3 +1,8 @@
+/**
+ * Prints the trip details by temporarily modifying the webpage content.
+ *
+ * @param {Object} trip - The trip details.
+ */
 export function printTrip(trip) {
     const originalContent = document.body.innerHTML; 
 
@@ -10,7 +15,7 @@ export function printTrip(trip) {
         </div>
     `;
 
-    document.body.innerHTML = printContent; 
-    window.print(); 
-    document.body.innerHTML = originalContent; 
+    document.body.innerHTML = printContent; // Replace the page content with printable content
+    window.print(); // Open the browser's print dialog
+    document.body.innerHTML = originalContent; // Restore the original page content after printing 
 }
