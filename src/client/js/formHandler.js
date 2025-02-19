@@ -3,6 +3,12 @@ import { validateInput } from "./validateInput";
 
 const BACKEND_URL = "http://localhost:8081"; 
 
+
+/**
+ * Handles the form submission, fetches trip details and updates the UI accordingly.
+ *
+ * @param {Event} event - The form submission event.
+ */
 export async function handleFormSubmission(event) {
     event.preventDefault();
 
@@ -14,6 +20,7 @@ export async function handleFormSubmission(event) {
     }
 
     try {
+        // Fetch location data based on the destination
         console.log("Fetching location data...");
         const locationResponse = await fetch(`${BACKEND_URL}/location?city=${destination}`);
         const locationData = await locationResponse.json();
@@ -25,6 +32,7 @@ export async function handleFormSubmission(event) {
 
         const { lat, lon, country } = locationData;
 
+        // Fetch weather data using the retrieved latitude and longitude
         console.log("Fetching weather data...");
         const weatherResponse = await fetch(`${BACKEND_URL}/weather?lat=${lat}&lon=${lon}&date=${departureDate}`);
         const weatherData = await weatherResponse.json();
@@ -34,6 +42,7 @@ export async function handleFormSubmission(event) {
             throw new Error(weatherData.error);
         }
 
+        // Fetch an image of the destination
         console.log("Fetching image data...");
         const imageResponse = await fetch(`${BACKEND_URL}/image?city=${destination}`);
         const imageData = await imageResponse.json();
@@ -43,6 +52,7 @@ export async function handleFormSubmission(event) {
             throw new Error(imageData.error);
         }
 
+        // Update the UI with the fetched trip details
         updateUI(destination, country, departureDate, weatherData, imageData.imageUrl);
 
     } catch (error) {
